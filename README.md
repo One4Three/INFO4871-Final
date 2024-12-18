@@ -59,7 +59,7 @@
 
 In order to compare the content of each subsequent bill, each bill’s text was converted to embeddings using the OpenAI API. Converting text to embeddings involves converting the text document into numerical representations, or vectors. Similar words, sentences, or phrases will have vectors that are closer together, while unrelated words will have vectors that are further apart. Once the bill texts were converted to vectors, cosine similarity was used to measure how similar the vectors of each bill were to the first bill. Cosine similarity calculates the angle between two vectors, where a smaller angle means the texts are more similar. The result is a score between 0 and 1: a score closer to 1 means the texts are nearly identical, while a score closer to 0 means they are very different. </p>
         <div class="center-frame">
-            <iframe src="./Graph/cosinesimilarity.png" height="500" width="800" frameborder="0"></iframe>
+            <img src="./Graph/cosinesimilarity.png" height="500" width="800"></img>
         </div>
     </div>
 </body>
