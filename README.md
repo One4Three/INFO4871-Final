@@ -46,6 +46,7 @@
         <div class="header">
             <h1>Colorado Legislators Propose Doomed Bill, 6 Years Straight</h1>
         </div>
+        <h2>Introduction</h2>
         <p>In every legislative session between 2016 and 2022, a bill titled <em>Protect Human Life At Conception</em> has been proposed. Each time it was introduced, the result was the same: postponed indefinitely in its first committee hearing. So, why was it repeatedly introduced? What motivates lawmakers to continue pushing bills that have been doomed from the beginning?</p>
         <p>Legislatures are built to tackle issues, and abortion is one at the forefront of Colorado citizens’ minds. However, when legislators repeatedly introduce nearly identical bills, it raises questions about legislative priorities and motivations. Does this persistence signify a genuine commitment to a cause, a strategy to influence public opinion, or simply a symbolic gesture meant to keep conversation going? Do voting outcomes change with each repeated proposal, or are the results as static as the texts themselves? Understanding the dynamics that influence voting on this bill can help illuminate the strategy behind ‘Message Bills’ as a whole.</p>
         <p>To investigate this phenomenon, I gathered data on the <em>Protect Human Life at Conception</em> bill series from publicly available legislative records on the Colorado Legislature website. These bills were introduced annually from 2016 to 2022, each time following a near-identical trajectory: postponed indefinitely after a committee hearing. The table below summarizes key details of each bill, including the year it was proposed, the prime sponsors, and the voting outcomes:</p>
@@ -53,6 +54,13 @@
             <iframe src="./Graph/PHLC_table1.html" height="500" width="800" frameborder="0"></iframe>
         </div>
         <p>While additional prime sponsors on these bills change throughout the years, one representative, Stephen Humphrey, championed the bill in every session between 2016 and 2020, before handing the responsibility to Rep. Patrick Neville, who was the sole prime sponsor of the bill until its final proposal in January of 2022. Were these changes in prime sponsorship reflected in the textual content of the bills? To answer this question, I conducted a textual analysis of each bill text and compared it to the original 2016 bill text.</p>
+        <h2>Textual Analysis</h2>
+        <p>To get the full text for each iteration of the bill, I utilized python libraries Requests, BeautifulSoup, and PyPDF to access, extract, and clean text each of the corresponding bill pages on the   Colorado Legislature website.
+
+In order to compare the content of each subsequent bill, each bill’s text was converted to embeddings using the OpenAI API. Converting text to embeddings involves converting the text document into numerical representations, or vectors. Similar words, sentences, or phrases will have vectors that are closer together, while unrelated words will have vectors that are further apart. Once the bill texts were converted to vectors, cosine similarity was used to measure how similar the vectors of each bill were to the first bill. Cosine similarity calculates the angle between two vectors, where a smaller angle means the texts are more similar. The result is a score between 0 and 1: a score closer to 1 means the texts are nearly identical, while a score closer to 0 means they are very different. </p>
+        <div class="center-frame">
+            <iframe src="./Graph/cosinesimilarity.png" height="500" width="800" frameborder="0"></iframe>
+        </div>
     </div>
 </body>
 </html>
