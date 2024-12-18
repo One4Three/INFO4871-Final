@@ -8,6 +8,6 @@
 </div>
 <body>
     <h2>Summary</h2>
-    <center><iframe src="./Graph/PHLC_table1.html" height="800" width="1200"</iframe></center>
+    <center><iframe src="./Graph/PHLC_table1.html" height="800" width="1200"></iframe></center>
     </body>
 </html>
